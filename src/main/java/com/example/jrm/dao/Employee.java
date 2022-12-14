@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 
-@Entity
+@Entity 
 @NamedQuery(name = "getTopSalaried", query = "FROM Employee e WHERE e.salary >= :low ORDER BY e.salary DESC")
 public class Employee {
     @Id
@@ -23,6 +23,14 @@ public class Employee {
     private LocalDate hired;
 
     private Double salary;
+    
+    @Column(name = "DEPARTMENT_ID")
+    private Integer departmentId;
+    
+    @Column(name = "JOB_ID")
+    private Integer jobId;
+    
+    private Double commission;
 
     public Employee() {
     }
@@ -67,9 +75,34 @@ public class Employee {
         this.salary = salary;
     }
 
-    @Override
-    public String toString() {
-        return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hired=" + hired
-                + ", salary=" + salary + "]";
-    }
+	public Integer getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(Integer departmentId) {
+		this.departmentId = departmentId;
+	}
+
+	public Integer getJobId() {
+		return jobId;
+	}
+
+	public void setJobId(Integer jobId) {
+		this.jobId = jobId;
+	}
+
+	public Double getCommission() {
+		return commission;
+	}
+
+	public void setCommission(Double commision) {
+		this.commission = commision;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hired=" + hired
+				+ ", salary=" + salary + ", departmentId=" + departmentId + ", jobId=" + jobId + ", commission="
+				+ commission + "]";
+	}
 }
