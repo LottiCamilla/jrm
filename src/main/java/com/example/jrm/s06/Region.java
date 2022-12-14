@@ -7,13 +7,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/// JAVABEAN
 @Entity(name = "s06.Region")
 @Table(name = "REGION")
 public class Region {
-    @Id
-    @Column(name = "REGION_ID")
+    @Id //PK
+    @Column(name = "REGION_ID") // la colonna di riferimento è region_id e si poteva evitare se la variabile sotto l'avessi chiamato regione_id
     private int id;
-    private String name;
+    private String name; // qui non metto @Column perché il nome è uguale a quello della tabella
 
     public Region() {
     }

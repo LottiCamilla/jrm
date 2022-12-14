@@ -3,6 +3,7 @@ package com.example.jrm.s06;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+// MAIN
 public class SessionAutoClose {
     public static void main(String[] args) {
         // Auto close on SF makes sense here, just because this is a demo code

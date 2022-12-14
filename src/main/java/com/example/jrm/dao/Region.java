@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 public class Region {
     @Id
     @Column(name = "REGION_ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // PK me la genera lui
     private int id;
     private String name;
 
